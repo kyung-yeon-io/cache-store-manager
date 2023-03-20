@@ -1,0 +1,39 @@
+{
+  "name": "cache-store-manager",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint ./src",
+    "test": "jest --coverage --detectOpenHandles --forceExit --ci --silent --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyung-yeon/cache-store-manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyung-yeon/cache-store-manager/issues"
+  },
+  "homepage": "https://github.com/kyung-yeon/cache-store-manager#readme",
+  "dependencies": {
+    "ioredis": "^5.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "ioredis-mock": "^8.2.6",
+    "jest": "^29.5.0",
+    "prettier": "^2.3.2",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.8.2"
+  }
+}
