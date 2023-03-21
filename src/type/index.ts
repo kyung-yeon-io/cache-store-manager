@@ -8,6 +8,17 @@ export interface CacheStoreManager {
   flush(): void;
 }
 
+export type CacheConfig = {
+  port?: number;
+  host?: string;
+  username?: string;
+  password?: string;
+  db?: number;
+  ttl?: number;
+};
+
+export type CacheConnection = 'redis';
+
 export const ONE_SECOND = 1000;
 export const ONE_MINUTE = 60 * ONE_SECOND;
 export const DEFAULT_TTL_TIME = ONE_MINUTE;

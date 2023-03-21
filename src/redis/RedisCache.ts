@@ -1,22 +1,12 @@
 import { Redis, RedisOptions } from 'ioredis';
-import { CacheStoreManager, DEFAULT_TTL_TIME } from '../type';
-
-export type RedisCacheConfig = {
-  client?: (opts: RedisOptions) => Redis;
-  port?: number;
-  host?: string;
-  username?: string;
-  password?: string;
-  db?: number;
-  ttl?: number;
-};
+import { CacheConfig, CacheStoreManager, DEFAULT_TTL_TIME } from '../type';
 
 export class RedisCache implements CacheStoreManager {
   private readonly client: Redis;
   private readonly ttl: number;
 
-  constructor(config?: RedisCacheConfig) {
-    const { client, ttl, ...redisConfig } = config ?? {};
+  constructor(config?: CacheConfig, client?: (opts: RedisOptions) => Redis) {
+    const { ttl, ...redisConfig } = config ?? {};
     this.ttl = ttl ?? DEFAULT_TTL_TIME;
     if (client) {
       this.client = client(redisConfig ?? {});
@@ -25,8 +15,8 @@ export class RedisCache implements CacheStoreManager {
     }
   }
 
-  static create(config?: RedisCacheConfig) {
-    return new RedisCache(config);
+  static create(config?: CacheConfig, client?: (opts: RedisOptions) => Redis) {
+    return new RedisCache(config, client);
   }
 
   get(key: string): Promise<string | null> {
