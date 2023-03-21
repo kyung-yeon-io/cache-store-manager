@@ -1,6 +1,6 @@
 {
   "name": "cache-store-manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,15 @@
     "url": "git+https://github.com/kyung-yeon/cache-store-manager.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "keywords": [
+    "cache",
+    "redis",
+    "cache",
+    "memory",
+    "npm",
+    "inMemory"
+  ],
   "bugs": {
     "url": "https://github.com/kyung-yeon/cache-store-manager/issues"
   },
